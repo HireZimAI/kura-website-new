@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kura | Enquiry response systems for clinics in Zimbabwe</title>
+<meta name="description" content="Kura helps Harare clinics, dental practices and aesthetic clinics reply to every patient enquiry, confirm appointments and reduce no-shows. Book a free 30-minute audit call.">
+<meta property="og:title" content="Kura | Every patient enquiry answered">
+<meta property="og:description" content="Enquiry response systems for clinics, dental and aesthetic practices in Zimbabwe.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.kuragrowthsystems.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kura | Every patient enquiry answered">
+<meta name="twitter:description" content="Enquiry response systems for clinics in Zimbabwe.">
+<link rel="canonical" href="https://www.kuragrowthsystems.com">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Add a 1200x630 PNG at /og.png then uncomment these two lines:
+<meta property="og:image" content="https://www.kuragrowthsystems.com/og.png">
+<meta name="twitter:image" content="https://www.kuragrowthsystems.com/og.png">
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ANALYTICS: paste your Plausible / GA4 / Cloudflare Web Analytics snippet here -->
+
+<style>
+:root{
+  --navy-900:#070E22;
+  --navy-800:#0A1330;
+  --navy-700:#101C42;
+  --navy-600:#1A2B5C;
+  --line:rgba(255,255,255,.10);
+  --paper:#F3F6FB;
+  --ink:#0A1330;
+  --muted:#9FB0CE;
+  --cyan:#2BC4E8;
+  --violet:#6D5CF5;
+  --red:#E4262E;
+  --wa:#25D366;
+  --good:#2BC4E8;
+  --good-ink:#04212B;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  font-family:'Archivo',system-ui,sans-serif;
+  background:var(--navy-900);color:var(--paper);
+  -webkit-font-smoothing:antialiased;line-height:1.55;
+}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:2px}
+
+/* ---------- brand mark ---------- */
+.mark{display:flex;align-items:center;gap:2px;font-weight:800;font-size:26px;letter-spacing:-.03em;text-decoration:none}
+.mark .k{
+  background:linear-gradient(135deg,var(--cyan) 0%,var(--violet) 55%,var(--red) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* ---------- nav ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(7,14,34,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.navlinks{display:flex;align-items:center;gap:30px;font-size:15px;color:var(--muted)}
+.navlinks a{text-decoration:none}
+.navlinks a:hover{color:var(--paper)}
+@media(max-width:820px){.navlinks .hide-sm{display:none}}
+
+.btn{
+  display:inline-block;padding:13px 22px;font-weight:600;font-size:15px;
+  text-decoration:none;border:0;cursor:pointer;font-family:inherit;
+}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#c81f27}
+.btn-ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+
+/* ---------- hero ---------- */
+.hero{padding:92px 0 100px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:44px}.hero{padding:56px 0 64px}}
+
+/* ---------- hero: the enquiry ledger ---------- */
+.ledger{border:1px solid var(--line);background:var(--navy-800);box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.led-head{display:flex;align-items:baseline;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.led-title{font-size:14.5px;font-weight:700;letter-spacing:-.01em}
+.led-day{font-size:12.5px;color:#5C6E92}
+.led-count{margin-left:auto;font-size:12.5px;color:var(--red);font-weight:700;font-variant-numeric:tabular-nums}
+.lrow{
+  display:grid;grid-template-columns:96px 1fr auto;gap:4px 14px;align-items:baseline;
+  padding:13px 18px;border-bottom:1px solid var(--line);
+  opacity:0;transform:translateY(7px);transition:opacity .3s ease,transform .3s ease
+}
+.lrow.on{opacity:1;transform:none}
+@media(max-width:420px){.lrow{grid-template-columns:1fr auto}}
+.lsrc{font-size:11.5px;font-weight:700;letter-spacing:.01em;color:var(--cyan)}
+@media(max-width:420px){.lsrc{grid-column:1/-1;margin-bottom:2px}}
+.lwhat{font-size:14.5px;color:var(--paper);line-height:1.4}
+.ltime{font-size:12px;color:#5C6E92;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.lstat{grid-column:2/-1;font-size:12.5px;color:var(--red);margin-top:2px}
+@media(max-width:420px){.lstat{grid-column:1/-1}}
+.led-foot{padding:16px 18px;font-size:13.5px;color:#6E80A4;line-height:1.55}
+.led-foot b{color:var(--paper);font-weight:600}
+
+
+  /* ---------- what kura does: the pipeline ---------- */
+  .doors{margin-top:44px}
+  .doors-lab{font-size:13px;color:#6E80A4;margin-bottom:14px}
+  .door-row{display:flex;flex-wrap:wrap;gap:9px}
+  .door{
+    border:1px solid var(--line);padding:9px 14px;font-size:14px;color:var(--muted);
+    background:var(--navy-800);white-space:nowrap
+  }
+  .door.wa{border-color:rgba(37,211,102,.45)}
+  .funnel{
+    display:flex;align-items:center;gap:14px;margin:26px 0 6px;
+    font-size:13.5px;color:#6E80A4
+  }
+  .funnel::before,.funnel::after{content:"";height:1px;background:var(--line);flex:1}
+  .stage-lab{font-size:13px;color:#6E80A4;margin-bottom:14px}
+
+/* ---------- sections ---------- */
+section{padding:96px 0;border-bottom:1px solid var(--line)}
+@media(max-width:820px){section{padding:64px 0}}
+h2{font-size:clamp(29px,4.2vw,46px);line-height:1.1;letter-spacing:-.03em;font-weight:800;max-width:17em}
+.sec-lede{font-size:18px;color:var(--muted);max-width:34em;margin-top:22px}
+.sec-tag{font-size:14px;color:#7386A8;margin-bottom:20px}
+
+.statement{font-size:clamp(28px,4.6vw,50px);line-height:1.14;letter-spacing:-.03em;font-weight:700;max-width:16em}
+.statement em{font-style:normal;color:var(--cyan)}
+
+/* audit questions — parallel, not sequential, so no numbering */
+.qlist{margin-top:52px;border-top:1px solid var(--line)}
+.q{
+  display:grid;grid-template-columns:190px 1fr;gap:32px;
+  padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline;
+}
+@media(max-width:700px){.q{grid-template-columns:1fr;gap:8px}}
+.q-k{font-size:14px;color:var(--cyan);font-weight:600}
+.q-t{font-size:clamp(19px,2.4vw,25px);font-weight:600;letter-spacing:-.02em}
+
+/* human section */
+.human{background:var(--navy-800)}
+.human-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:820px){.human-grid{grid-template-columns:1fr;gap:32px}}
+.human ul{list-style:none;display:grid;gap:16px;margin-top:8px}
+.human li{display:flex;gap:14px;font-size:17px;color:#C8D5EA}
+.tick{color:var(--cyan);flex-shrink:0;font-weight:700}
+
+/* modules */
+.mods{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:54px;border:1px solid var(--line)}
+@media(max-width:900px){.mods{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.mods{grid-template-columns:1fr}}
+.mod{background:var(--navy-900);padding:32px 26px}
+.mod h3{font-size:18px;font-weight:700;margin-bottom:12px;letter-spacing:-.015em}
+.mod p{font-size:15px;color:var(--muted)}
+
+/* form */
+.form-sec{background:var(--paper);color:var(--ink);border-bottom:0}
+.form-sec h2{color:var(--ink)}
+.form-sec .sec-lede{color:#4A5C7A}
+.form-sec .sec-tag{color:#6B7C99}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+@media(max-width:820px){.form-grid{grid-template-columns:1fr;gap:36px}}
+.btn-book{display:block;text-align:center;font-size:17px;padding:17px 24px}
+.reassure{list-style:none;display:grid;gap:13px;margin:26px 0 4px}
+.reassure li{display:flex;gap:12px;font-size:16px;color:#3F5372;line-height:1.45}
+.reassure .tick{color:var(--violet)}
+
+/* footer */
+footer{background:var(--navy-900);padding:52px 0;font-size:14.5px;color:#7386A8}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+
+/* floating whatsapp */
+.float{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:56px;height:56px;border-radius:50%;background:var(--wa);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 26px rgba(0,0,0,.4);text-decoration:none;
+}
+.float:hover{background:#1eb757}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="mark"><span class="k">K</span>ura</a>
+      <div class="navlinks">
+        <a href="#what" class="hide-sm">What Kura does</a>
+        <a href="#audit" class="hide-sm">The audit</a>
+        <a href="#report" class="hide-sm">The report</a>
+        <a href="https://calendar.app.google/4XfCWod77wxvs7a68" target="_blank" rel="noopener" class="btn btn-red">Book a free audit call</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Built for clinics and private practices</p>
+        <h1>More enquiries.<br>More patients booked.</h1>
+        <p class="lede">Kura makes sure every patient enquiry gets a reply, every appointment gets confirmed, and fewer people don't show up.</p>
+        <div class="hero-cta">
+          <a href="https://calendar.app.google/4XfCWod77wxvs7a68" target="_blank" rel="noopener" class="btn btn-red">Book a free audit call</a>
+          <a href="#problem" class="btn btn-ghost">See how it works</a>
+        </div>
+        <p class="hero-note">A free 30-minute call. No visit to your practice, no software pitch. We find the gap, value it and show you what to fix first.</p>
+      </div>
+
+      <aside class="ledger" id="ledger" aria-label="Example: every patient enquiry a practice received in one day">
+        <div class="led-head">
+          <span class="led-title">Enquiries today</span>
+          <span class="led-day">Tuesday</span>
+          <span class="led-count"><span data-count>0</span> with nobody on them</span>
+        </div>
+
+        <div class="lrow" data-lrow>
+          <span class="lsrc">Missed call</span>
+          <span class="lwhat">Rang twice. Reception was with a patient</span>
+          <span class="ltime">11:20</span>
+          <span class="lstat">No callback</span>
+        </div>
+        <div class="lrow" data-lrow>
+          <span class="lsrc">Walk-in</span>
+          <span class="lwhat">Asked about implants, took a card, left</span>
+          <span class="ltime">14:10</span>
+          <span class="lstat">No name, no number</span>
+        </div>
+        <div class="lrow" data-lrow>
+          <span class="lsrc">Referral</span>
+          <span class="lwhat">Sent over by Dr Marufu&rsquo;s rooms</span>
+          <span class="ltime">16:05</span>
+          <span class="lstat">Never contacted</span>
+        </div>
+        <div class="lrow" data-lrow>
+          <span class="lsrc">Ad comment</span>
+          <span class="lwhat">&ldquo;Price for whitening?&rdquo;</span>
+          <span class="ltime">19:42</span>
+          <span class="lstat">Unanswered</span>
+        </div>
+        <div class="lrow" data-lrow>
+          <span class="lsrc">WhatsApp</span>
+          <span class="lwhat">&ldquo;Do you take PSMAS?&rdquo;</span>
+          <span class="ltime">20:15</span>
+          <span class="lstat">Unread</span>
+        </div>
+        <div class="lrow" data-lrow>
+          <span class="lsrc">Website</span>
+          <span class="lwhat">Form: Saturday appointment?</span>
+          <span class="ltime">06:02</span>
+          <span class="lstat">Sitting in an inbox</span>
+        </div>
+
+        <p class="led-foot">Six patients. Five different doors. <b>No practice has a list like this &mdash; which is why nothing on it gets chased.</b></p>
+      </aside>
+    </div>
+  </div>
+
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="wrap">
+      <p class="sec-tag">The real problem</p>
+      <p class="statement">You may not need more patients. You may need to stop losing <em>the ones who already called.</em></p>
+      <p class="sec-lede">Patients call, message and ask about treatment every day. Reception is with someone. It's after five. The message sits unread until tomorrow. By then they've booked somewhere else — and nobody in the practice ever knew they existed.</p>
+    </div>
+  </section>
+
+  <!-- WHAT KURA DOES -->
+  <section id="what">
+    <div class="wrap">
+      <p class="sec-tag">What Kura does</p>
+      <h2>An enquiry is not a message. It is money with a deadline.</h2>
+      <p class="sec-lede">Patients reach a practice through whichever door is nearest. Most of those doors have nobody standing behind them. Kura turns all of them into one list, and works that list until each enquiry is either in the diary or written off on purpose.</p>
+
+      <div class="doors">
+        <p class="doors-lab">Every way a patient reaches you</p>
+        <div class="door-row">
+          <span class="door">Missed calls</span>
+          <span class="door">Walk-ins</span>
+          <span class="door wa">WhatsApp</span>
+          <span class="door">Ad comments and DMs</span>
+          <span class="door">Website forms</span>
+          <span class="door">Referrals</span>
+          <span class="door">Your existing records</span>
+        </div>
+        <p class="funnel">become one enquiry list</p>
+        <p class="stage-lab">and Kura works it in four stages</p>
+      </div>
+
+      <div class="mods">
+        <div class="mod">
+          <h3>Capture</h3>
+          <p>Every door logged as an enquiry with a name, a number and an owner &mdash; including the missed calls and walk-ins that currently leave no trace.</p>
+        </div>
+        <div class="mod">
+          <h3>Follow-up</h3>
+          <p>Nothing sits unanswered. Each enquiry is chased on whichever channel the patient will actually reply to, until it books or is closed.</p>
+        </div>
+        <div class="mod">
+          <h3>Reactivate</h3>
+          <p>Your own records are the largest untouched list you own. Patients overdue a recall are found and invited back.</p>
+        </div>
+        <div class="mod">
+          <h3>Insights</h3>
+          <p>How fast you answered, what you missed, what booked and what it was worth &mdash; measured against your own baseline, not an industry average.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== RESPONSE-TIME RACE ===================== -->
+  <style>
+  .race{
+    background:var(--navy-800);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:72px 0 80px;
+  }
+  .race h2{font-size:clamp(30px,4.4vw,46px);line-height:1.08;letter-spacing:-.03em;font-weight:800;max-width:none}
+  .race .sec-lede{color:var(--muted);font-size:17.5px;margin-top:14px;max-width:56ch}
+
+  .lanes{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px;align-items:start}
+  @media(max-width:860px){.lanes{grid-template-columns:1fr;gap:28px}}
+
+  .lane{border:1px solid var(--line);background:var(--navy-900);display:flex;flex-direction:column}
+  .lane-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}
+  .lane-title{font-size:15px;font-weight:700;letter-spacing:-.01em}
+  .lane-sub{font-size:13px;color:#6E80A4}
+
+  .clock{padding:22px 18px 20px;border-bottom:1px solid var(--line)}
+  .clock-num{
+    font-size:clamp(38px,6.2vw,58px);font-weight:800;letter-spacing:-.045em;
+    font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;
+    color:var(--paper);transition:color .35s ease;line-height:1
+  }
+  .clock-label{font-size:13px;color:#6E80A4;margin-top:8px}
+  .lane.settled .clock-num{color:var(--good)}
+  .lane.lost .clock-num{color:var(--red)}
+  .verdict{
+    display:inline-block;margin-top:12px;padding:5px 11px;font-size:13px;font-weight:700;
+    opacity:0;transform:translateY(4px);transition:opacity .3s ease,transform .3s ease
+  }
+  .verdict.on{opacity:1;transform:none}
+  .verdict.good{background:var(--good);color:var(--good-ink)}
+  .verdict.bad{background:var(--red);color:#fff}
+
+  .rthread{padding:18px;display:flex;flex-direction:column;gap:10px;min-height:330px}
+  .rbub{
+    max-width:84%;padding:11px 14px;font-size:15px;position:relative;
+    opacity:0;transform:translateY(8px);transition:opacity .28s ease,transform .28s ease
+  }
+  .rbub.on{opacity:1;transform:none}
+  .rbub.rin{align-self:flex-start;background:var(--navy-700);color:var(--paper)}
+  .rbub.rout{align-self:flex-end;background:var(--wa);color:#05301A}
+  .rbub .t{display:block;font-size:11.5px;opacity:.62;margin-top:5px;font-variant-numeric:tabular-nums}
+
+  .event{
+    align-self:stretch;font-size:13px;color:#7386A8;border-left:2px solid var(--line);
+    padding:3px 0 3px 12px;opacity:0;transform:translateY(6px);
+    transition:opacity .28s ease,transform .28s ease
+  }
+  .event.on{opacity:1;transform:none}
+  .event b{color:var(--muted);font-weight:600}
+
+  .typing{align-self:flex-start;display:flex;gap:4px;padding:13px 15px;background:var(--navy-700);opacity:0;transition:opacity .2s}
+  .typing.on{opacity:1}
+  .typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:blip 1.05s infinite}
+  .typing i:nth-child(2){animation-delay:.18s}
+  .typing i:nth-child(3){animation-delay:.36s}
+  @keyframes blip{0%,60%,100%{opacity:.28}30%{opacity:1}}
+
+  .closer{margin-top:36px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .closer p{font-size:clamp(19px,2.4vw,26px);font-weight:700;letter-spacing:-.02em;max-width:30ch;
+    opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
+  .closer p.on{opacity:1;transform:none}
+  .closer p em{font-style:normal;color:var(--cyan)}
+  .replay{
+    background:none;border:1px solid var(--line);color:var(--muted);font-family:inherit;
+    font-size:14px;font-weight:600;padding:11px 18px;cursor:pointer;opacity:0;transition:opacity .4s
+  }
+  .replay.on{opacity:1}
+  .replay:hover{color:var(--paper);border-color:var(--muted)}
+  </style>
+
+  <section class="race" id="race" aria-label="Response time comparison">
+    <div class="wrap">
+      <h2>The same missed call, twice.</h2>
+      <p class="sec-lede">Tendai rings the practice at 19:42. Nobody picks up &mdash; it&rsquo;s after hours. A missed call leaves no trace, no name and no number. Here is that Tuesday at a practice running Kura, and at the same practice without it.</p>
+
+      <div class="lanes">
+
+        <div class="lane" id="laneA">
+          <div class="lane-head">
+            <span class="lane-title">With Kura</span>
+            <span class="lane-sub">Tue 19:42 &middot; after hours</span>
+          </div>
+          <div class="clock">
+            <div class="clock-num" data-clock>00:00:00</div>
+            <div class="clock-label">from enquiry to outcome</div>
+            <span class="verdict good" data-verdict>Booked</span>
+          </div>
+          <div class="rthread">
+            <div class="event" data-step="a0"><b>19:42</b> &mdash; Tendai rings the practice. It rings out</div>
+            <div class="event" data-step="a1"><b>19:42</b> &mdash; Kura logs the missed call as an enquiry and texts the number back</div>
+            <div class="typing" data-typing><i></i><i></i><i></i></div>
+            <div class="rbub rout" data-step="a2">Hi, this is Ruvimbo Dental &mdash; sorry we missed your call. What can we help with? I can book you in from here.<span class="t">19:43</span></div>
+            <div class="rbub rin" data-step="a3">Oh hi &mdash; I was asking about whitening. Thursday morning any good?<span class="t">19:46</span></div>
+            <div class="rbub rout" data-step="a4">Booked &mdash; Thursday 10:00. I'll send a reminder the day before.<span class="t">19:47</span></div>
+            <div class="event" data-step="a5"><b>Wed 09:00</b> &mdash; reminder sent, confirmed</div>
+            <div class="event" data-step="a6"><b>Thu 09:52</b> &mdash; Tendai arrives. $85 in the till</div>
+          </div>
+        </div>
+
+        <div class="lane" id="laneB">
+          <div class="lane-head">
+            <span class="lane-title">Without</span>
+            <span class="lane-sub">Tue 19:42 &middot; after hours</span>
+          </div>
+          <div class="clock">
+            <div class="clock-num" data-clock>00:00:00</div>
+            <div class="clock-label">from enquiry to outcome</div>
+            <span class="verdict bad" data-verdict>Lost</span>
+          </div>
+          <div class="rthread">
+            <div class="event" data-step="b0"><b>19:42</b> &mdash; Tendai rings the practice. It rings out</div>
+            <div class="event quiet" data-step="b1"><b>Tue 21:00</b> &mdash; nothing happens, because nothing was recorded. No name, no number, no trace</div>
+            <div class="event quiet" data-step="b2"><b>Wed 08:31</b> &mdash; reception opens with no idea the call ever came in</div>
+            <div class="event" data-step="b3"><b>Wed 11:04</b> &mdash; Tendai tries once more. Engaged. She doesn't try again</div>
+            <div class="event" data-step="b4"><b>Thu 10:58</b> &mdash; she books at the practice two streets over, who answered</div>
+            <div class="event" data-step="b5"><b>Thu</b> &mdash; one patient, gone. Nobody at the practice will ever know she existed</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="closer">
+        <p data-closer>A phone call became a booked appointment. <em>No bot answers a phone.</em></p>
+        <button class="replay" data-replay type="button">Play again</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var race = document.getElementById('race');
+    if(!race) return;
+    var A = document.getElementById('laneA'), B = document.getElementById('laneB');
+    var closer = race.querySelector('[data-closer]'), replay = race.querySelector('[data-replay]');
+    var el = function(s){ return race.querySelector('[data-step="'+s+'"]'); };
+    var clockA = A.querySelector('[data-clock]'), clockB = B.querySelector('[data-clock]');
+    var vA = A.querySelector('[data-verdict]'), vB = B.querySelector('[data-verdict]');
+    var typing = A.querySelector('[data-typing]');
+
+    var END_A = 4*60 + 12;
+    var END_B = 39*3600 + 16*60;
+
+    function fmt(s){
+      s = Math.max(0, Math.round(s));
+      var h = String(Math.floor(s/3600)).padStart(2,'0');
+      var m = String(Math.floor(s/60)%60).padStart(2,'0');
+      var x = String(s%60).padStart(2,'0');
+      return h+':'+m+':'+x;
+    }
+    function show(id){ var n = el(id); if(n) n.classList.add('on'); }
+
+    var script = [
+      [   0, function(){ show('a0'); show('b0'); }],
+      [ 900, function(){ typing.classList.add('on'); }],
+      [1500, function(){ show('a1'); }],
+      [2300, function(){ typing.classList.remove('on'); show('a2'); }],
+      [3000, function(){ show('b1'); }],
+      [3300, function(){ show('a3'); }],
+      [4100, function(){ show('a4'); A.classList.add('settled'); vA.classList.add('on'); }],
+      [5000, function(){ show('b2'); }],
+      [5200, function(){ show('a5'); }],
+      [6100, function(){ show('a6'); }],
+      [7200, function(){ show('b3'); }],
+      [9200, function(){ show('b4'); }],
+      [9900, function(){ show('b5'); B.classList.add('lost'); vB.classList.add('on'); }],
+      [10600,function(){ closer.classList.add('on'); replay.classList.add('on'); }]
+    ];
+
+    var timers = [], raf = null, t0 = 0;
+    function easeOut(t){ return 1 - Math.pow(1-t, 3); }
+
+    function tick(now){
+      var p = now - t0;
+      clockA.textContent = fmt(END_A * easeOut(Math.min(1, p/4100)));
+      clockB.textContent = fmt(END_B * Math.pow(Math.min(1, p/9900), 2.1));
+      if(p < 9900){ raf = requestAnimationFrame(tick); }
+      else { clockA.textContent = fmt(END_A); clockB.textContent = fmt(END_B); }
+    }
+
+    function finalState(){
+      race.querySelectorAll('.rbub,.event').forEach(function(n){ n.classList.add('on'); });
+      typing.classList.remove('on');
+      clockA.textContent = fmt(END_A); clockB.textContent = fmt(END_B);
+      A.classList.add('settled'); B.classList.add('lost');
+      vA.classList.add('on'); vB.classList.add('on');
+      closer.classList.add('on'); replay.classList.add('on');
+    }
+    function reset(){
+      timers.forEach(clearTimeout); timers = [];
+      if(raf) cancelAnimationFrame(raf);
+      race.querySelectorAll('.rbub,.event').forEach(function(n){ n.classList.remove('on'); });
+      typing.classList.remove('on');
+      A.classList.remove('settled'); B.classList.remove('lost');
+      vA.classList.remove('on'); vB.classList.remove('on');
+      closer.classList.remove('on'); replay.classList.remove('on');
+      clockA.textContent = '00:00:00'; clockB.textContent = '00:00:00';
+    }
+    function play(){
+      reset();
+      script.forEach(function(s){ timers.push(setTimeout(s[1], s[0])); });
+      t0 = performance.now();
+      raf = requestAnimationFrame(tick);
+    }
+
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ finalState(); return; }
+
+    var played = false;
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting && !played){ played = true; play(); } });
+    }, {threshold: 0.4}).observe(race);
+
+    replay.addEventListener('click', play);
+  })();
+  </script>
+  <!-- =================== END RESPONSE-TIME RACE =================== -->
+
+  <!-- AUDIT -->
+  <section id="audit">
+    <div class="wrap">
+      <p class="sec-tag">The free Revenue Leak Audit call</p>
+      <h2>We start with one leak. Not five. One.</h2>
+      <p class="sec-lede">It's a free 30-minute call &mdash; we don't need to come to your practice. Before we speak we look at four places money quietly disappears, measure what the worst one is costing you, and show you that number on the call. We run a limited number each month so every practice gets proper attention.</p>
+
+      <div class="qlist">
+        <div class="q"><span class="q-k">Enquiries</span><span class="q-t">Which patient enquiry never got a reply?</span></div>
+        <div class="q"><span class="q-k">Calls</span><span class="q-t">Who called when reception was busy?</span></div>
+        <div class="q"><span class="q-k">Quotes</span><span class="q-t">Which treatment quote went quiet?</span></div>
+        <div class="q"><span class="q-k">Patients</span><span class="q-t">Who hasn't been back in over a year?</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== RECALL DEMO ===================== -->
+  <style>
+  .rec{background:var(--navy-800);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0 80px}
+  .rec h2{max-width:none}
+  .recall{display:grid;grid-template-columns:340px 1fr;gap:22px;align-items:start;margin-top:42px}
+  @media(max-width:900px){.recall{grid-template-columns:1fr}}
+  .gauge{border:1px solid var(--line);background:var(--navy-900);padding:26px 22px 24px;position:sticky;top:96px}
+  @media(max-width:900px){.gauge{position:static}}
+  .gauge-num{font-size:clamp(64px,11vw,104px);font-weight:800;letter-spacing:-.055em;line-height:.9;
+    font-variant-numeric:tabular-nums;color:var(--paper);transition:color .4s ease}
+  .gauge.back .gauge-num{color:var(--good)}
+  .gauge-unit{font-size:15px;color:var(--muted);margin-top:10px}
+  .gauge-who{font-size:13.5px;color:#6E80A4;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+  .bars{display:flex;gap:3px;margin-top:20px;height:34px;align-items:flex-end}
+  .bars span{flex:1;background:var(--navy-700);height:22%;transition:background .3s ease,height .3s ease}
+  .bars span.miss{background:#2A1520;height:52%}
+  .bars span.hit{background:var(--good);height:100%}
+  .rec-thread{border:1px solid var(--line);background:var(--navy-900);padding:18px;
+    display:flex;flex-direction:column;gap:10px;min-height:420px}
+  .event.quiet{color:#4C5C7C;font-style:italic}
+  .rbub .tag{display:block;font-size:11px;font-weight:700;opacity:.7;margin-bottom:5px}
+  .who{font-size:12.5px;color:var(--cyan);font-weight:600;align-self:flex-start;
+    opacity:0;transform:translateY(6px);transition:opacity .28s ease,transform .28s ease}
+  .who.on{opacity:1;transform:none}
+  .note{font-size:12.5px;color:#4C5C7C;margin-top:18px;max-width:70ch}
+  </style>
+
+  <section class="rec" id="rec" aria-label="Patient recall example">
+    <div class="wrap">
+      <h2>The patient who stopped coming.</h2>
+      <p class="sec-lede">Chipo isn't a lead. She is already in your records. She was treated, she paid, she was happy &mdash; and nobody ever asked her to come back.</p>
+
+      <div class="recall">
+        <div class="gauge" id="gauge">
+          <div class="gauge-num" data-months>0</div>
+          <div class="gauge-unit">months since Chipo's last visit</div>
+          <div class="bars" data-bars>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="gauge-who">Chipo M. &middot; cleaning and one filling, April 2025 &middot; never asked back</div>
+        </div>
+
+        <div class="rec-thread">
+          <div class="event" data-step="r0"><b>Apr 2025</b> &mdash; Chipo comes in. Cleaning, one filling. She pays and leaves happy</div>
+          <div class="event quiet" data-step="r1"><b>Oct 2025</b> &mdash; six-month recall due. Nobody has a list, so nobody sends it</div>
+          <div class="event quiet" data-step="r2"><b>Apr 2026</b> &mdash; a year. She hasn't thought about her teeth once</div>
+          <div class="event" data-step="r3"><b>Jun 2026</b> &mdash; Kura reads the practice's own records and finds every patient overdue a recall</div>
+          <div class="rbub rout" data-step="r4"><span class="tag">Approved WhatsApp template</span>Hi Chipo, it's Ruvimbo Dental. Your last check-up was April last year &mdash; you're due one. Shall I hold a slot for you this month? Reply STOP if you'd rather not hear from us.<span class="t">Mon 09:14</span></div>
+          <div class="rbub rin" data-step="r5">Oh gosh, has it been that long. How much is a clean now?<span class="t">Mon 12:31</span></div>
+          <div class="who" data-step="r6">Chipo replied &mdash; Rutendo at the practice picks it up from here</div>
+          <div class="rbub rout" data-step="r7">Looking at your notes there's a filling from last year worth checking too &mdash; we'd do both in one visit. Tuesday 10:30 or Thursday 15:00?<span class="t">Mon 12:38</span></div>
+          <div class="rbub rin" data-step="r8">Tuesday please<span class="t">Mon 12:40</span></div>
+          <div class="rbub rout" data-step="r9">Booked &mdash; Tuesday 10:30. See you then.<span class="t">Mon 12:40</span></div>
+          <div class="event" data-step="r10"><b>Tue</b> &mdash; Chipo is back in the chair. She never left. Nobody had asked her to return</div>
+        </div>
+      </div>
+
+      <div class="closer">
+        <p data-closer2>The cheapest patient you will ever book is <em>one you have already treated</em>.</p>
+        <button class="replay" data-replay2 type="button">Play again</button>
+      </div>
+      <p class="note">Recall messages go to your own patients on an approved WhatsApp template, with an opt-out on the first line.</p>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var rec = document.getElementById('rec'); if(!rec) return;
+    var gauge = document.getElementById('gauge');
+    var months = rec.querySelector('[data-months]');
+    var bars = Array.prototype.slice.call(rec.querySelector('[data-bars]').children);
+    var closer = rec.querySelector('[data-closer2]'), replay = rec.querySelector('[data-replay2]');
+    var on = function(id){ var n = rec.querySelector('[data-step="'+id+'"]'); if(n) n.classList.add('on'); };
+    var easeOut = function(t){ return 1 - Math.pow(1-t,3); };
+    var CLIMB = 4200, COLLAPSE_AT = 8900, COLLAPSE = 700, DUR = 9700;
+    var phase = 0, timers = [], raf = null, t0 = 0;
+
+    function paint(n, back){
+      bars.forEach(function(b,i){ b.className = back ? (i===bars.length-1 ? 'hit' : '') : (i<n ? 'miss' : ''); });
+    }
+    var cues = [
+      [    0, function(){ on('r0'); }],
+      [ 1300, function(){ on('r1'); }],
+      [ 2700, function(){ on('r2'); }],
+      [ 4300, function(){ on('r3'); }],
+      [ 5100, function(){ on('r4'); }],
+      [ 6300, function(){ on('r5'); }],
+      [ 6800, function(){ on('r6'); }],
+      [ 7400, function(){ on('r7'); }],
+      [ 8300, function(){ on('r8'); }],
+      [ 8900, function(){ on('r9'); phase = 1; gauge.classList.add('back'); }],
+      [ 9700, function(){ on('r10'); }],
+      [10300, function(){ closer.classList.add('on'); replay.classList.add('on'); }]
+    ];
+    function tick(now){
+      var ms = now - t0;
+      if(phase === 0){
+        var n = Math.round(14 * easeOut(Math.min(1, ms/CLIMB)));
+        months.textContent = n; paint(n, false);
+      } else {
+        var k = Math.min(1, (ms - COLLAPSE_AT)/COLLAPSE);
+        months.textContent = Math.round(14 * (1 - easeOut(k)));
+        if(k >= 1) paint(0, true);
+      }
+      if(ms < DUR + 800) raf = requestAnimationFrame(tick);
+    }
+    function reset(){
+      timers.forEach(clearTimeout); timers = [];
+      if(raf) cancelAnimationFrame(raf);
+      rec.querySelectorAll('.rbub,.event,.who').forEach(function(n){ n.classList.remove('on'); });
+      gauge.classList.remove('back'); closer.classList.remove('on'); replay.classList.remove('on');
+      months.textContent = '0'; paint(0, false); phase = 0;
+    }
+    function play(){
+      reset();
+      cues.forEach(function(c){ timers.push(setTimeout(c[1], c[0])); });
+      t0 = performance.now(); raf = requestAnimationFrame(tick);
+    }
+    function final(){
+      rec.querySelectorAll('.rbub,.event,.who').forEach(function(n){ n.classList.add('on'); });
+      months.textContent = '0'; gauge.classList.add('back'); paint(0, true);
+      closer.classList.add('on'); replay.classList.add('on');
+    }
+
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ final(); return; }
+    var played = false;
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting && !played){ played = true; play(); } });
+    }, {threshold:0.3}).observe(rec);
+    replay.addEventListener('click', play);
+  })();
+  </script>
+  <!-- =================== END RECALL DEMO =================== -->
+
+  <!-- THE HUMAN -->
+  <section class="human">
+    <div class="wrap human-grid">
+      <div>
+        <p class="sec-tag">Why Kura is not just software</p>
+        <h2>A trained specialist watches every enquiry.</h2>
+      </div>
+      <div>
+        <ul>
+          <li><span class="tick">&#10003;</span><span>A real person reviews your enquiry pipeline every working day</span></li>
+          <li><span class="tick">&#10003;</span><span>Anything the system can't handle gets picked up, not ignored</span></li>
+          <li><span class="tick">&#10003;</span><span>We set it up, run it and keep it working — your reception doesn't learn new software</span></li>
+          <li><span class="tick">&#10003;</span><span>You get a monthly report showing what was recovered</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== THE REPORT ===================== -->
+  <style>
+  .rep{background:var(--navy-900);padding:80px 0 88px;border-bottom:1px solid var(--line)}
+  .rep h2{max-width:none}
+  .rep-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;margin-top:46px;align-items:center}
+  @media(max-width:940px){.rep-grid{grid-template-columns:1fr;gap:38px}}
+
+  .rep-points{list-style:none;display:grid;gap:26px}
+  .rep-points li{border-left:2px solid var(--cyan);padding-left:18px}
+  .rep-points h3{font-size:17.5px;font-weight:700;letter-spacing:-.015em;margin-bottom:7px}
+  .rep-points p{font-size:15.5px;color:var(--muted);line-height:1.55}
+
+  /* the document */
+  .doc-shell{position:relative}
+  .doc-flag{
+    position:absolute;top:-13px;left:18px;z-index:2;background:var(--violet);color:#fff;
+    font-size:11.5px;font-weight:700;padding:5px 11px
+  }
+  .doc{
+    background:#fff;color:#0A1330;padding:26px 28px 22px;
+    box-shadow:0 26px 64px rgba(0,0,0,.5);line-height:1.5
+  }
+  @media(max-width:520px){.doc{padding:20px 18px 18px}}
+  .doc-mast{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+    padding-bottom:15px;border-bottom:2px solid #0A1330}
+  .doc-mark{font-weight:800;font-size:19px;letter-spacing:-.03em;line-height:1}
+  .doc-mark .k{background:linear-gradient(135deg,#2BC4E8,#6D5CF5 55%,#E4262E);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .doc-kind{font-size:11px;color:#77869F;margin-top:5px}
+  .doc-r{text-align:right}
+  .doc-practice{font-size:13.5px;font-weight:700}
+  .doc-period{font-size:11px;color:#77869F;margin-top:3px}
+
+  .doc-hero{padding:22px 0 20px;border-bottom:1px solid #D8E0EC}
+  .doc-hlabel{font-size:11.5px;color:#77869F;margin-bottom:13px}
+  .doc-hrow{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}
+  .doc-cap{font-size:11px;color:#77869F;margin-bottom:5px}
+  .doc-num{font-size:clamp(22px,3.6vw,31px);font-weight:800;letter-spacing:-.04em;line-height:1;
+    font-variant-numeric:tabular-nums}
+  .doc-was .doc-num{color:#C8202B}
+  .doc-now .doc-num{color:#177A4C}
+  .doc-sub{font-size:11px;color:#77869F;margin-top:5px}
+  .doc-arrow{font-size:19px;color:#D8E0EC}
+
+  .doc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:20px 0;border-bottom:1px solid #D8E0EC}
+  .doc-stat .n{font-size:20px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .doc-stat .l{font-size:11.5px;color:#3D4E70;margin-top:4px;line-height:1.35}
+  .doc-stat .d{font-size:10.5px;color:#177A4C;font-weight:600;margin-top:3px}
+
+  .doc-note{background:#F4F7FB;padding:15px 16px;margin-top:18px;font-size:12.5px;color:#3D4E70;line-height:1.6}
+  .doc-note b{color:#0A1330;font-weight:600}
+
+  .doc-sign{display:flex;align-items:center;gap:12px;padding-top:18px;margin-top:16px;border-top:1px solid #D8E0EC}
+  .doc-face{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#2BC4E8,#6D5CF5);
+    display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:15px;flex-shrink:0}
+  .doc-signame{font-size:13.5px;font-weight:700}
+  .doc-sigrole{font-size:11.5px;color:#77869F;margin-top:2px}
+  .rep-cap{font-size:12.5px;color:#4C5C7C;margin-top:16px;line-height:1.55}
+  .rep-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:40px;
+    padding-top:32px;border-top:1px solid var(--line)}
+  .rep-cta span{font-size:15px;color:var(--muted)}
+
+  </style>
+
+  <section class="rep" id="report" aria-label="The monthly recovery report">
+    <div class="wrap">
+      <p class="sec-tag">How you'll know it's working</p>
+      <h2>Every month, a report signed by a person.</h2>
+      <p class="sec-lede">Not a dashboard you have to log into and interpret. One page, written by the specialist who ran your enquiries that month, telling you what happened and what they're doing next.</p>
+
+      <div class="rep-grid">
+
+        <div class="doc-shell">
+          <span class="doc-flag">Sample</span>
+          <div class="doc">
+            <div class="doc-mast">
+              <div>
+                <div class="doc-mark"><span class="k">K</span>ura</div>
+                <div class="doc-kind">Monthly Recovery Report</div>
+              </div>
+              <div class="doc-r">
+                <div class="doc-practice">Sample Dental Practice</div>
+                <div class="doc-period">Month 3 &middot; measured against your baseline</div>
+              </div>
+            </div>
+
+            <div class="doc-hero">
+              <p class="doc-hlabel">How long a patient waited for a reply</p>
+              <div class="doc-hrow">
+                <div class="doc-was">
+                  <div class="doc-cap">Before Kura</div>
+                  <div class="doc-num">14h 22m</div>
+                  <div class="doc-sub">median first reply</div>
+                </div>
+                <div class="doc-arrow" aria-hidden="true">&rarr;</div>
+                <div class="doc-now">
+                  <div class="doc-cap">This month</div>
+                  <div class="doc-num">3m 41s</div>
+                  <div class="doc-sub">median first reply</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="doc-stats">
+              <div class="doc-stat"><div class="n">96%</div><div class="l">answered within the hour</div><div class="d">was 21%</div></div>
+              <div class="doc-stat"><div class="n">1</div><div class="l">enquiry never answered</div><div class="d">was 23</div></div>
+              <div class="doc-stat"><div class="n">41</div><div class="l">arrived outside working hours</div><div class="d">55% of all enquiries</div></div>
+            </div>
+
+            <div class="doc-note">
+              Six of the eleven ad comments came in after 20:00. If you're spending on Meta, <b>the evening is when it works</b> &mdash; worth telling whoever runs your ads. Next month we're going after the 2024 recall list, roughly 90 patients.
+            </div>
+
+            <div class="doc-sign">
+              <div class="doc-face" aria-hidden="true">R</div>
+              <div>
+                <div class="doc-signame">Your Kura specialist</div>
+                <div class="doc-sigrole">Answerable for these numbers</div>
+              </div>
+            </div>
+          </div>
+          <p class="rep-cap">Example only &mdash; figures illustrate the format, not a real practice. Yours will carry your own numbers from month one.</p>
+        </div>
+
+        <ul class="rep-points">
+          <li>
+            <h3>A number you have never had</h3>
+            <p>No practice knows how long its patients actually wait for a reply. We measure it during your free audit, then measure it every month after. That baseline is yours whether you work with us or not.</p>
+          </li>
+          <li>
+            <h3>We undercount on purpose</h3>
+            <p>A visit is only attributed when the enquiry, the reply and the booking are all in the same thread. Walk-ins and desk bookings are excluded, so the real figure is always higher than the one we show you.</p>
+          </li>
+          <li>
+            <h3>Someone's judgement, not a data export</h3>
+            <p>The last section is written, not generated &mdash; what changed, what it means for your diary, what we're doing about it next month. A dashboard cannot tell you to keep Thursday afternoons free.</p>
+          </li>
+        </ul>
+
+      </div>
+
+      <p class="rep-cta">
+        <a href="https://calendar.app.google/4XfCWod77wxvs7a68" target="_blank" rel="noopener" class="btn btn-red">Book a free audit call</a>
+        <span>Your baseline gets measured on that call.</span>
+      </p>
+    </div>
+  </section>
+  <!-- =================== END THE REPORT =================== -->
+
+  <!-- ===================== LEAK CALCULATOR ===================== -->
+  <style>
+  .calc{background:var(--navy-800);border-top:1px solid var(--line);padding:78px 0 84px}
+  .calc h2{max-width:none}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px;align-items:stretch}
+  @media(max-width:900px){.calc-grid{grid-template-columns:1fr;gap:22px}}
+
+  .inputs{border:1px solid var(--line);background:var(--navy-900);padding:30px 26px}
+  .field{margin-bottom:30px}
+  .field:last-child{margin-bottom:0}
+  .field-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:14px}
+  .field-label{font-size:15px;font-weight:600;line-height:1.35}
+  .field-val{font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--cyan);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .field-hint{font-size:13px;color:#5C6E92;margin-top:9px;line-height:1.45}
+
+  input[type=range]{
+    -webkit-appearance:none;appearance:none;width:100%;height:4px;background:var(--navy-700);
+    outline:none;cursor:pointer;border-radius:0
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;
+    background:var(--paper);cursor:pointer;border:0;box-shadow:0 2px 8px rgba(0,0,0,.5)
+  }
+  input[type=range]::-moz-range-thumb{
+    width:22px;height:22px;border-radius:50%;background:var(--paper);cursor:pointer;border:0
+  }
+  input[type=range]:focus-visible{outline:2px solid var(--cyan);outline-offset:6px}
+
+  .result{border:1px solid var(--line);background:var(--navy-900);padding:30px 26px;display:flex;flex-direction:column}
+  .result-tag{font-size:13.5px;color:#6E80A4}
+  .result-num{
+    font-size:clamp(46px,7.6vw,78px);font-weight:800;letter-spacing:-.05em;line-height:1;
+    color:var(--red);font-variant-numeric:tabular-nums;margin:12px 0 6px
+  }
+  .result-unit{font-size:15.5px;color:var(--muted)}
+  .working{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:#8296B8;line-height:1.7}
+  .working b{color:var(--paper);font-weight:600;font-variant-numeric:tabular-nums}
+  .result-foot{margin-top:auto;padding-top:24px}
+  .result-foot .btn{display:block;text-align:center}
+  .assump{font-size:12.5px;color:#4C5C7C;margin-top:14px;line-height:1.55}
+  </style>
+
+  <section class="calc" id="calc" aria-label="Revenue leak calculator">
+    <div class="wrap">
+      <p class="sec-tag">Before you book anything</p>
+      <h2>Put your own numbers in.</h2>
+      <p class="sec-lede">You don't need us to tell you there's a gap. You need to know what it's worth. Move the three sliders and the number on the right is yours, not ours.</p>
+
+      <div class="calc-grid">
+        <div class="inputs">
+          <div class="field">
+            <div class="field-top">
+              <label class="field-label" for="c-enq">Patient enquiries a month</label>
+              <span class="field-val" data-out="enq">60</span>
+            </div>
+            <input type="range" id="c-enq" min="10" max="300" step="5" value="60">
+            <p class="field-hint">Calls, WhatsApps, ad comments, website forms &mdash; everything, not just the ones that booked.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-top">
+              <label class="field-label" for="c-val">What one new patient is worth</label>
+              <span class="field-val" data-out="val">$80</span>
+            </div>
+            <input type="range" id="c-val" min="20" max="600" step="10" value="80">
+            <p class="field-hint">The first visit, not their lifetime. Be conservative.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-top">
+              <label class="field-label" for="c-gap">Share that don't get a reply the same day</label>
+              <span class="field-val" data-out="gap">30%</span>
+            </div>
+            <input type="range" id="c-gap" min="0" max="60" step="5" value="30">
+            <p class="field-hint">Evenings, weekends, lunch hour, and the ones reception meant to come back to.</p>
+          </div>
+        </div>
+
+        <div class="result">
+          <p class="result-tag">Walking out the door every year</p>
+          <div class="result-num" data-out="loss">$5,702</div>
+          <p class="result-unit">and nobody in the practice ever sees it happen</p>
+
+          <div class="working">
+            <b data-out="missed">18</b> enquiries a month go quiet.<br>
+            That's <b data-out="annual">216</b> a year.<br>
+            About <b data-out="booked">71</b> of them would have booked if someone had replied.
+          </div>
+
+          <div class="result-foot">
+            <a class="btn btn-red" href="https://calendar.app.google/4XfCWod77wxvs7a68" target="_blank" rel="noopener">Find out how much of that you can get back</a>
+            <p class="assump">Assumes one in three enquiries books when it gets a prompt reply &mdash; deliberately conservative. On the call we replace these estimates with your real numbers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var c = document.getElementById('calc'); if(!c) return;
+    var enq = document.getElementById('c-enq'),
+        val = document.getElementById('c-val'),
+        gap = document.getElementById('c-gap');
+    var out = {};
+    Array.prototype.forEach.call(c.querySelectorAll('[data-out]'), function(n){ out[n.getAttribute('data-out')] = n; });
+
+    var BOOK_RATE = 1/3;
+    var money = function(n){ return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); };
+
+    var shown = 0, raf = null;
+    function animate(target){
+      if(raf) cancelAnimationFrame(raf);
+      var from = shown, t0 = performance.now(), dur = 420;
+      (function step(now){
+        var k = Math.min(1, (now - t0)/dur);
+        var e = 1 - Math.pow(1-k, 3);
+        shown = from + (target - from) * e;
+        out.loss.textContent = money(shown);
+        if(k < 1) raf = requestAnimationFrame(step); else shown = target;
+      })(performance.now());
+    }
+
+    function update(animateNum){
+      var E = +enq.value, V = +val.value, G = +gap.value/100;
+      var missedMonth = E * G;
+      var missedYear  = missedMonth * 12;
+      var wouldBook   = missedYear * BOOK_RATE;
+      var loss        = wouldBook * V;
+
+      out.enq.textContent = E;
+      out.val.textContent = '$' + V;
+      out.gap.textContent = G*100 + '%';
+      out.missed.textContent = Math.round(missedMonth);
+      out.annual.textContent = Math.round(missedYear);
+      out.booked.textContent = Math.round(wouldBook);
+
+      if(animateNum) animate(loss);
+      else { shown = loss; out.loss.textContent = money(loss); }
+    }
+
+    [enq, val, gap].forEach(function(el){
+      el.addEventListener('input', function(){ update(true); });
+    });
+    update(false);
+  })();
+  </script>
+  <!-- =================== END LEAK CALCULATOR =================== -->
+
+  <!-- BOOK -->
+  <section class="form-sec" id="book">
+    <div class="wrap form-grid">
+      <div>
+        <p class="sec-tag">Your first step</p>
+        <h2>What would fixing one leak be worth to your practice?</h2>
+        <p class="sec-lede">Pick a time that suits you. We'll ask a few questions about your practice first so that by the time we speak, we've already looked at where your enquiries come in.</p>
+      </div>
+
+      <div>
+        <!-- BOOKING: replace with your GHL landing page URL (questions -> redirect to calendar with prefill) -->
+        <a class="btn btn-red btn-book" href="https://calendar.app.google/4XfCWod77wxvs7a68" target="_blank" rel="noopener">Book a free audit call</a>
+
+        <ul class="reassure">
+          <li><span class="tick">&#10003;</span><span>30 minutes, on a call &mdash; we don't visit your practice</span></li>
+          <li><span class="tick">&#10003;</span><span>A few quick questions first, so we've done the homework before we speak</span></li>
+          <li><span class="tick">&#10003;</span><span>You leave with a number, whether or not you work with us</span></li>
+        </ul>
+
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#top" class="mark"><span class="k">K</span>ura</a>
+    <span>Built in Zimbabwe, for Zimbabwean clinics. A Veneka company.</span>
+    <span>&copy; 2026 Kura Growth Systems</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP: replace 263XXXXXXXXX with your business number -->
+<a class="float" href="https://wa.me/263XXXXXXXXX?text=Hi%20Kura%2C%20I%27d%20like%20to%20ask%20about%20the%20free%20audit%20call." aria-label="Message Kura on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#05301A" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.95 1.35-.5.05-.98.23-3.3-.69-2.77-1.09-4.55-3.92-4.69-4.1-.14-.19-1.12-1.49-1.12-2.84s.71-2.02.96-2.29c.25-.28.55-.35.73-.35h.52c.17 0 .4-.06.62.48.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.92 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.6.75 1.87.89.28.14.46.21.53.33.07.11.07.66-.17 1.34z"/></svg>
+</a>
+
+
+<script>
+(function(){
+  var led = document.getElementById('ledger'); if(!led) return;
+  var rows = led.querySelectorAll('[data-lrow]');
+  var count = led.querySelector('[data-count]');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    Array.prototype.forEach.call(rows, function(r){ r.classList.add('on'); });
+    count.textContent = rows.length;
+    return;
+  }
+  Array.prototype.forEach.call(rows, function(r,i){
+    setTimeout(function(){ r.classList.add('on'); count.textContent = i+1; }, 380 + i*430);
+  });
+})();
+</script>
+</body>
+</html>

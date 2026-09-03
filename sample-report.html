@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kura — Monthly Recovery Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A1330; --ink-2:#3D4E70; --ink-3:#77869F;
+  --rule:#D8E0EC; --paper:#FFFFFF; --wash:#F4F7FB;
+  --cyan:#1B96B8; --violet:#6D5CF5; --red:#C8202B; --green:#177A4C;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#E7ECF4;font-family:'Archivo',system-ui,sans-serif;color:var(--ink);
+  -webkit-font-smoothing:antialiased;line-height:1.5;padding:34px 18px;
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  padding:52px 56px 44px;box-shadow:0 18px 50px rgba(16,32,64,.16);
+}
+@media(max-width:640px){.sheet{padding:34px 24px 32px}}
+
+/* ---------- masthead ---------- */
+.mast{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;
+  padding-bottom:22px;border-bottom:2px solid var(--ink)}
+.mark{font-weight:800;font-size:25px;letter-spacing:-.03em;line-height:1}
+.mark .k{background:linear-gradient(135deg,#2BC4E8,#6D5CF5 55%,#E4262E);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.mast-kind{font-size:12.5px;color:var(--ink-3);margin-top:7px}
+.mast-r{text-align:right}
+.mast-practice{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.mast-period{font-size:13px;color:var(--ink-3);margin-top:5px}
+
+/* ---------- headline metric ---------- */
+.headline{padding:34px 0 30px;border-bottom:1px solid var(--rule)}
+.h-label{font-size:13px;color:var(--ink-3);margin-bottom:16px}
+.h-row{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:center}
+@media(max-width:640px){.h-row{grid-template-columns:1fr;gap:14px}.arrow{display:none}}
+.h-cell .cap{font-size:12.5px;color:var(--ink-3);margin-bottom:6px}
+.h-cell .num{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.045em;line-height:1;
+  font-variant-numeric:tabular-nums}
+.was .num{color:var(--red)}
+.now .num{color:var(--green)}
+.h-cell .sub{font-size:12.5px;color:var(--ink-3);margin-top:7px}
+.arrow{font-size:26px;color:var(--rule)}
+
+/* ---------- bands ---------- */
+.band{padding:28px 0;border-bottom:1px solid var(--rule)}
+.band-h{font-size:12.5px;color:var(--ink-3);margin-bottom:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media(max-width:640px){.grid3,.grid4{grid-template-columns:repeat(2,1fr);gap:20px}}
+.stat .n{font-size:27px;font-weight:800;letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums}
+.stat .l{font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.4}
+.stat .d{font-size:12px;margin-top:5px;font-weight:600}
+.up{color:var(--green)} .down{color:var(--red)}
+
+/* channel bar */
+.chan{display:flex;height:11px;margin-top:4px;margin-bottom:14px;overflow:hidden}
+.chan i{display:block;height:100%}
+.chan-key{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;color:var(--ink-2)}
+.chan-key span{display:flex;align-items:center;gap:8px}
+.dot{width:9px;height:9px;flex-shrink:0}
+
+/* recovered */
+.rec-table{width:100%;border-collapse:collapse;font-size:14px}
+.rec-table th{text-align:left;font-size:12.5px;color:var(--ink-3);font-weight:500;
+  padding-bottom:9px;border-bottom:1px solid var(--rule)}
+.rec-table td{padding:11px 0;border-bottom:1px solid var(--rule);color:var(--ink-2)}
+.rec-table td:last-child,.rec-table th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.rec-table tr:last-child td{border-bottom:0;font-weight:700;color:var(--ink);padding-top:14px}
+
+/* judgement */
+.note{background:var(--wash);padding:22px 24px;margin-top:28px}
+.note h4{font-size:13px;color:var(--ink-3);font-weight:500;margin-bottom:11px}
+.note p{font-size:14.5px;color:var(--ink-2);margin-bottom:10px}
+.note p:last-child{margin-bottom:0}
+.note b{color:var(--ink);font-weight:600}
+
+/* signature */
+.sign{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
+  padding-top:30px;margin-top:6px;flex-wrap:wrap}
+.sig-l{display:flex;gap:15px;align-items:center}
+.face{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#2BC4E8,#6D5CF5);
+  display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:19px;flex-shrink:0}
+.sig-name{font-size:16px;font-weight:700;letter-spacing:-.01em}
+.sig-role{font-size:13px;color:var(--ink-3);margin-top:3px}
+.sig-r{font-size:12.5px;color:var(--ink-3);text-align:right;line-height:1.6}
+.foot{margin-top:26px;padding-top:16px;border-top:1px solid var(--rule);
+  font-size:11.5px;color:var(--ink-3);line-height:1.6}
+
+@media print{
+  body{background:#fff;padding:0}
+  .sheet{box-shadow:none;max-width:100%;padding:26px 30px}
+}
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="mast">
+    <div>
+      <div class="mark"><span class="k">K</span>ura</div>
+      <div class="mast-kind">Monthly Recovery Report</div>
+    </div>
+    <div class="mast-r">
+      <div class="mast-practice">Ruvimbo Dental</div>
+      <div class="mast-period">August 2026 &middot; month 3 &middot; baseline June 2026</div>
+    </div>
+  </div>
+
+  <!-- HEADLINE: the number nobody else can give them -->
+  <div class="headline">
+    <p class="h-label">How long a patient waited for a reply</p>
+    <div class="h-row">
+      <div class="h-cell was">
+        <div class="cap">Before Kura &mdash; June</div>
+        <div class="num">14h 22m</div>
+        <div class="sub">median time to first reply</div>
+      </div>
+      <div class="arrow" aria-hidden="true">&rarr;</div>
+      <div class="h-cell now">
+        <div class="cap">This month &mdash; August</div>
+        <div class="num">3m 41s</div>
+        <div class="sub">median time to first reply</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESPONSE -->
+  <div class="band">
+    <p class="band-h">Response</p>
+    <div class="grid3">
+      <div class="stat">
+        <div class="n">96%</div>
+        <div class="l">answered within the hour</div>
+        <div class="d up">was 21% in June</div>
+      </div>
+      <div class="stat">
+        <div class="n">1</div>
+        <div class="l">enquiry never answered</div>
+        <div class="d up">was 23 in June</div>
+      </div>
+      <div class="stat">
+        <div class="n">41</div>
+        <div class="l">arrived outside working hours</div>
+        <div class="d">55% of everything you received</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENQUIRIES -->
+  <div class="band">
+    <p class="band-h">Enquiries &mdash; 74 received</p>
+    <div class="chan">
+      <i style="width:51.4%;background:#25D366"></i>
+      <i style="width:25.7%;background:#6D5CF5"></i>
+      <i style="width:14.9%;background:#1B96B8"></i>
+      <i style="width:8.0%;background:#C8202B"></i>
+    </div>
+    <div class="chan-key">
+      <span><i class="dot" style="background:#25D366"></i>WhatsApp 38</span>
+      <span><i class="dot" style="background:#6D5CF5"></i>Missed calls 19</span>
+      <span><i class="dot" style="background:#1B96B8"></i>Ad comments 11</span>
+      <span><i class="dot" style="background:#C8202B"></i>Website 6</span>
+    </div>
+  </div>
+
+  <!-- BOOKINGS -->
+  <div class="band">
+    <p class="band-h">Bookings</p>
+    <div class="grid4">
+      <div class="stat">
+        <div class="n">31</div>
+        <div class="l">booked from enquiries</div>
+        <div class="d up">42% of enquiries</div>
+      </div>
+      <div class="stat">
+        <div class="n">6</div>
+        <div class="l">dormant patients returned</div>
+        <div class="d">from your own records</div>
+      </div>
+      <div class="stat">
+        <div class="n">9</div>
+        <div class="l">no-shows prevented</div>
+        <div class="d">confirmed after reminder</div>
+      </div>
+      <div class="stat">
+        <div class="n">4</div>
+        <div class="l">rebooked after cancelling</div>
+        <div class="d">same week</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECOVERED -->
+  <div class="band">
+    <p class="band-h">What we can attribute</p>
+    <table class="rec-table">
+      <thead>
+        <tr><th>Source</th><th>Visits</th><th>Value</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Enquiries answered outside working hours that booked</td><td>17</td><td>$1,445</td></tr>
+        <tr><td>Dormant patients brought back by recall</td><td>6</td><td>$840</td></tr>
+        <tr><td>Appointments kept after a reminder</td><td>9</td><td>$765</td></tr>
+        <tr><td>Attributable this month</td><td>32</td><td>$3,050</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- JUDGEMENT -->
+  <div class="note">
+    <h4>What we changed, and what's next</h4>
+    <p>Missed calls are now your second largest source of enquiries at 19. In June they weren't counted at all because nobody knew they were happening. Every one now gets a WhatsApp within two minutes.</p>
+    <p>Six of the eleven ad comments came in after 20:00. If you're spending on Meta, <b>the evening is when it works</b> &mdash; worth telling whoever runs your ads.</p>
+    <p>Next month we're going after the 2024 recall list, roughly 90 patients. Expect more enquiries than usual in week two, and keep Thursday afternoons a little emptier than you normally would.</p>
+  </div>
+
+  <!-- SIGNATURE -->
+  <div class="sign">
+    <div class="sig-l">
+      <div class="face" aria-hidden="true">R</div>
+      <div>
+        <div class="sig-name">Rutendo Chirwa</div>
+        <div class="sig-role">Your Kura specialist &middot; rutendo@kuragrowthsystems.com</div>
+      </div>
+    </div>
+    <div class="sig-r">
+      Questions about anything here?<br>
+      WhatsApp me directly on +263 XX XXX XXXX
+    </div>
+  </div>
+
+  <p class="foot">
+    Attribution is deliberately conservative. We only count a visit where the enquiry, the reply and the booking are all recorded in the same thread &mdash; walk-ins, phone bookings taken at the desk and referrals are excluded, so your real figure is higher than the one above.
+    Baseline measured during your Revenue Leak Audit, 11 June 2026.
+  </p>
+
+</div>
+
+</body>
+</html>
