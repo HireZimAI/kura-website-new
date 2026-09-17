@@ -9,3 +9,12 @@
 
 /sample-report.html
   X-Robots-Tag: noindex
+
+/privacy.html
+  Cache-Control: public, max-age=300
+
+/terms.html
+  Cache-Control: public, max-age=300
+
+/data-deletion.html
+  Cache-Control: public, max-age=300
