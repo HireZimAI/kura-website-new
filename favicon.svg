@@ -1,11 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2BC4E8"/>
-      <stop offset="55%" stop-color="#6D5CF5"/>
-      <stop offset="100%" stop-color="#E4262E"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" fill="#070E22"/>
-  <path d="M16 12 h9 v18 l16-18 h11 L34.5 32 52 52 H41 L25 34 v18 h-9 Z" fill="url(#g)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Kura">
+  <rect width="512" height="512" rx="96" fill="#071B14"/>
+  <g transform="translate(60,60) scale(1.1)"><g fill="#FF7A1A">
+    <rect x="52" y="55" width="54" height="190" rx="9"/>
+    <path d="M96 151 L222 25 L194 0 L292 0 L292 98 L266 72 L131 190 Z"/>
+    <path d="M102 157 L143 121 L248 245 L180 245 Z"/>
+  </g></g>
 </svg>
